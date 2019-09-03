@@ -1,4 +1,4 @@
-public with sharing class ATMMachine implements ATMState {
+public with sharing class ATMMachine implements GetATMData {
 
 	private ATMState hasCard;
 	private ATMState noCard;
@@ -45,4 +45,7 @@ public with sharing class ATMMachine implements ATMState {
 	public ATMState getNoCardState() { return noCard; }
 	public ATMState getHasPin() { return hasCorrectPin; }
 	public ATMState getNoCashState() { return outOfMoney; }
+
+	public ATMState getATMState() { return state; }
+	public Integer getCashInMachine() { return availableCash; }
 }
